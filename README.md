@@ -1,5 +1,5 @@
-# Repositoiro Spatial house pricing model:
-# Cali es cali, lo demás es loma... 
+# Repositoiro Spatial house pricing model: 
+Cali es cali, lo demás es loma... 
 
 Este repositorio corresponde al Problem Set 3 del curso Big Data and Machine Learning for Applied Economics 2022.
 
