@@ -1,0 +1,24 @@
+﻿Key,Sumario,Chech,USE,Value
+aerialway,1.1Aerialway,Nicolas,YES,cable_car
+aeroway,1.2Aeroway,Nicolas,YES,aerodrome
+amenity,1.3.3Transportation,Nicolas,YES,bicycle_parking,bus_station,fuel,parking,taxi.
+amenity,1.3.4Financial,Nicolas,YES,bank
+amenity,1.3.5Healthcare,Nicolas,YES,hospital
+amenity,1.3.7Public Service,Nicolas,YES,police,prision,townhall
+building,1.6.11Additional attributes,Nicolas,YES,hight
+highway,1.11.3Special road types,Nicolas,YES,living_street,pedestrian
+highway,1.11.7When cycleway is drawn as its own way (see Bicycle),Nicolas,YES,cycleway
+highway,1.11.11Other highway features,Nicolas,YES,bus_stop,street_lamp
+leisure,1.14Leisure,Nicolas,YES,adult_gaming_centre,dance, park,pitch,stadium,water_park
+office,1.18Office,Nicolas,YES,diplomatic
+place,1.19.4Other places,Nicolas,YES,square
+shop,1.24.5Health and beauty,Nicolas,YES,erotic,tattoo
+shop,1.24.10Art, music, hobbies,Nicolas,YES,art,music
+shop,1.24.11Stationery, gifts, books, newspapers,Nicolas,YES,lottery,books
+water,1.28Water,Nicolas,YES,river,lake
+amenity,1.3.2Education,Rafa,YES,college,library,university
+amenity,1.3.6Entertainment, Arts & Culture,Rafa,YES,love_hotel,nightclub,theatre
+landuse,1.13.2Common landuse key values - rural and agricultural land,Rafa,YES,forest
+public_transport,1.21Public transport,Rafa,YES,station
+sport,1.25Sport,Rafa,YES,cycling, futsal, motocross, soccer, swimming, tennis
+tourism,1.27Tourism,Rafa,YES,zoo
