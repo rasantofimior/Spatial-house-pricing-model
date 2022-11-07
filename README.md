@@ -16,6 +16,7 @@ Este repositorio contiene las siguientes carpetas:
 
 -Problem_Set_3.pdf:
 Este docuemnto contiene las instrucciones para abordar el reto 3 (predicción del precio de la vivienda en Cali)
+
 -Cali_es_Cali.pdf
 Este reporte muestra y describe la data, modelos, resultado y principales conclusiones para atender el reto
 
