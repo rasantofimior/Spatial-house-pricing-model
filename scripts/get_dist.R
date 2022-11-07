@@ -48,10 +48,3 @@ for (i in 1:nrow(keyvals)) {
     path <- paste0("../stores/", "dist_cal_", keyvals$value[i], ".Rds")
     saveRDS(dist_feature, path)
 }
-
-for (i in dir("../stores/")) {
-    path <- paste0("../stores/", i)
-    x <- readRDS(path)
-    print(i)
-    print(ncol(x))
-}
