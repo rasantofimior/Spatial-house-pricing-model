@@ -94,6 +94,12 @@ leaflet() %>%
   addPolygons(data= poly_cal[inputed_cal[1:10,],]) %>%
   addCircles(data=inputed_cal [1:10,], color="red")
 
+
+saveRDS(inputed_bog, file = "lum_dist_vars_imputed_bog.Rds")
+saveRDS(inputed_med, file = "lum_dist_vars_imputed_med.Rds")
+saveRDS(inputed_cal, file = "lum_dist_vars_imputed_cal.Rds")
+
+
 ############################ **Gráficos**  #####################################
   
 ###plot Bogota-UPZ}
