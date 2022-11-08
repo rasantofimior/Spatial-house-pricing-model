@@ -42,3 +42,6 @@ vignettes/*.pdf
 stores/dist_bog*
 stores/dist_med*
 stores/dist_cal*
+stores/night_light_202002.tif
+stores/night_light_202003.tif
+stores/VNL_2021.tif
