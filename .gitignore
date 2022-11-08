@@ -37,3 +37,8 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# Datasets
+stores/dist_bog*
+stores/dist_med*
+stores/dist_cal*

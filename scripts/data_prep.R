@@ -94,4 +94,4 @@ houses_preproc <- function(houses) {
 # Transform training data
 bog_med <- houses_preproc(bog_med)
 # Transfom test data
-cal <- houses_preproc(cal)
+houses_cal <- houses_preproc(cal)
