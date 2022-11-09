@@ -2,25 +2,14 @@ source("../scripts/get_mode.R")
 source("./data_prep.R")
 
 library("tidyverse")
-# library("sf")
-# library("osmdata")
-# library("spdep")
 library("dplyr")
 
 houses_bog <- dplyr::filter(bog_med, city == "Bogotá D.C")
 houses_med <- dplyr::filter(bog_med, city == "Medellín")
 
-# bog_geo <- st_as_sf(x = houses_bog, coords = c("lon", "lat"), crs = 4326)
-# med_geo <- st_as_sf(x = houses_med, coords = c("lon", "lat"), crs = 4326)
-# cal_geo <- st_as_sf(x = cal, coords = c("lon", "lat"), crs = 4326)
-
-# rm(list = c("bog_med", "cal", "houses_bog", "houses_med", "houses_preproc"))
-
 nei_bog <- readRDS("../stores/nei_bog.Rds")
 nei_med <- readRDS("../stores/nei_med.Rds")
 nei_cal <- readRDS("../stores/nei_cal.Rds")
-
-
 
 mode_imputer <- function(df, neighbors) {
     vars_to_impute <- c(
