@@ -32,7 +32,7 @@ luces_r
 luces_s <- read_stars("./stores/VNL_2021.tif")
 luces_s
 ## atributos
-names(luces_s) <- "date_2021"
+names(luces_s) <- "lum_val"
 luces_s[[1]] %>%
   as.vector() %>%
   summary()
@@ -68,7 +68,7 @@ l_cal <- st_crop(x = luces_s, y = cal) # crop luces de Colombia con polygono de 
 # l_bog= c(l_bog_0,l_bog_1)
 ## BOGOTA
 ggplot() +
-  geom_stars(data = l_bog, aes(y = y, x = x, fill = date_2021)) + # plot raster
+  geom_stars(data = l_bog, aes(y = y, x = x, fill = lum_val)) + # plot raster
   scale_fill_viridis(option = "A", na.value = "white") +
   geom_sf(data = bog, fill = NA, col = "green") +
   theme_bw()
@@ -77,7 +77,7 @@ puntos_bog <- st_as_sf(x = l_bog, as_points = T, na.rm = T) # raster to sf (poin
 poly_bog <- st_as_sf(x = l_bog, as_points = F, na.rm = T) # raster to sf (polygons)
 ## MEDALLO
 ggplot() +
-  geom_stars(data = l_med, aes(y = y, x = x, fill = date_2021)) + # plot raster
+  geom_stars(data = l_med, aes(y = y, x = x, fill = lum_val)) + # plot raster
   scale_fill_viridis(option = "A", na.value = "white") +
   geom_sf(data = med, fill = NA, col = "green") +
   theme_bw()
@@ -86,7 +86,7 @@ puntos_med <- st_as_sf(x = l_med, as_points = T, na.rm = T) # raster to sf (poin
 poly_med <- st_as_sf(x = l_med, as_points = F, na.rm = T) # raster to sf (polygons)
 ## CALI
 ggplot() +
-  geom_stars(data = l_cal, aes(y = y, x = x, fill = date_2021)) + # plot raster
+  geom_stars(data = l_cal, aes(y = y, x = x, fill = lum_val)) + # plot raster
   scale_fill_viridis(option = "A", na.value = "white") +
   geom_sf(data = cal, fill = NA, col = "green") +
   theme_bw()
@@ -105,6 +105,9 @@ leaflet() %>%
   addCircles(data = inputed_cal[1:10, ], color = "red")
 
 
+inputed_bog <- st_drop_geometry(inputed_bog)
+inputed_med <- st_drop_geometry(inputed_med)
+inputed_med <- st_drop_geometry(inputed_cal)
 saveRDS(inputed_bog, file = "./stores/lum_dist_vars_imputed_bog.Rds")
 saveRDS(inputed_med, file = "./stores/lum_dist_vars_imputed_med.Rds")
 saveRDS(inputed_cal, file = "./stores/lum_dist_vars_imputed_cal.Rds")
