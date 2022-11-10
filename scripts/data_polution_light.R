@@ -27,10 +27,8 @@ scalebar <- ggsn::scalebar
 # leaflet() %>% addTiles() %>% addCircleMarkers(data=cal_geo[4000:4010,])
 ## importar raster de luces: raster
 luces_r <- raster("./stores/VNL_2021.tif")
-luces_r
 ## importar raster de luces: stars
 luces_s <- read_stars("./stores/VNL_2021.tif")
-luces_s
 ## atributos
 names(luces_s) <- "lum_val"
 luces_s[[1]] %>%
@@ -103,7 +101,6 @@ leaflet() %>%
   addTiles() %>%
   addPolygons(data = poly_cal[inputed_cal[1:10, ], ]) %>%
   addCircles(data = inputed_cal[1:10, ], color = "red")
-
 
 inputed_bog <- st_drop_geometry(inputed_bog)
 inputed_med <- st_drop_geometry(inputed_med)
