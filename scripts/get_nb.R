@@ -34,10 +34,10 @@ saveRDS(med_nb, "../stores/nei_med.Rds")
 cal_nb <- get_nb(cal_geo, 50)
 saveRDS(cal_nb, "../stores/nei_cal.Rds")
 
-# Neighbors to houses in Bogota, Medellin and Cali - 500 meters
-bog_nb_500 <- get_nb(bog_geo, 500)
-saveRDS(bog_nb_500, "../stores/nei_bog_500.Rds")
-med_nb_500 <- get_nb(med_geo, 500)
-saveRDS(med_nb_500, "../stores/nei_med_500.Rds")
-cal_nb_500 <- get_nb(cal_geo, 500)
-saveRDS(cal_nb_500, "../stores/nei_cal_500.Rds")
+# Neighbors to houses in Bogota, Medellin and Cali - 150 meters
+bog_nb_150 <- get_nb(bog_geo, 150)
+saveRDS(bog_nb_150, "../stores/nei_bog_150.Rds")
+med_nb_150 <- get_nb(med_geo, 150)
+saveRDS(med_nb_150, "../stores/nei_med_150.Rds")
+cal_nb_150 <- get_nb(cal_geo, 150)
+saveRDS(cal_nb_150, "../stores/nei_cal_150.Rds")

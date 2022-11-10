@@ -11,23 +11,25 @@ houses_bog$price <- houses_bog$price + mean_transformer
 data <- rbind(houses_bog, houses_med)
 data <- data %>%
     group_by(city) %>%
-    slice_sample(n = 500)
+    slice_sample(n = 500) %>%
+    ungroup()
 
-# Create dummies
+predictors <- data %>%
+    select(-c(property_id, description, price)) %>%
+    names()
+
+# Create recipe
 
 data <- recipe(~., data = data) %>%
-    step_impute_mode(P6210) %>%
-    step_dummy(
-        Depto, P5090, P6210
-    ) %>%
+    step_rm(property_id, description) %>%
+    update_role(price, new_role = "outcome") %>%
+    update_role(all_of(!!predictors), new_role = "predictor") %>%
     step_interact(
-        terms = ~ Nper:starts_with("P6210") +
-            Oc:starts_with("P6210") +
-            P6020:starts_with("P6210") +
-            P6040:starts_with("P6210")
+        terms = ~ house:all_predictors() +
+            city:all_predictors()
     ) %>%
     step_poly(
-        Nper, Oc, P5000, P5010, P6020, P6090, P6040,
+        surface_total, lum_val, starts_with("less"), starts_with("closest"),
         degree = 3
     ) %>%
     prep() %>%
@@ -43,11 +45,7 @@ set.seed(10)
 validation_split <- vfold_cv(train, v = 5)
 
 # Recipes to prepare data for classification
-rec_reg <- recipe(Ingpcug ~ ., data = train) %>%
-    step_rm(Lp, Pobre) %>%
-    step_impute_mode(
-        P6920, P7040, P7090, P7505
-    ) %>%
-    step_dummy(
-        P6920, P7040, P7090, P7505
-    )
+rec_reg <- recipe(price ~ ., data = train)
+# %>%
+# step_impute_mode(P6210) %>%
+# step_impute_mean(lum_val)
